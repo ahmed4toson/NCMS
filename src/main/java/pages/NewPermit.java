@@ -1,2 +1,4 @@
-package pages;public class NewPermit {
+package pages;
+
+public class NewPermit {
 }

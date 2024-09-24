@@ -30,8 +30,6 @@ public class TestBase {
 
     static WebDriver driver;
 
-
-
     public static void reporter(String status, String stepDetail) throws InterruptedException {
 
         //ExtentTest logger = null;
@@ -74,7 +72,7 @@ public class TestBase {
         options.setCapability("browserVersion","126.0.6478.126");
         driver.manage().window().maximize();
         if (executeBeforeMethod) {
-            driver.get("https://stg.wakeb.tech/en");
+            driver.get("https://vms-stg.wakeb.tech/login");
         }
     }
 

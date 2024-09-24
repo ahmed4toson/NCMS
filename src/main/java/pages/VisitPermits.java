@@ -1,2 +1,4 @@
-package pages;public class VisitPermits {
+package pages;
+
+public class VisitPermits {
 }
