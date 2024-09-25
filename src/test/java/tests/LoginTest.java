@@ -16,14 +16,19 @@ public class LoginTest extends TestBase{
 
     loginpage =new LoginPage(driver);
     loginpage.FormLogin("default@wakeb.com","P@ssw0rd");
+        reporter("info","userName is default@wakeb.com");
+        reporter("warning","user should enter a valid password");
 
-    reporter("pass","Toson");
+    if (5 == 5){
+        reporter("Pass","Toson passed");
+    }else {
+        reporter("fail","Toson faild");
+    }
 }
 
-
 @Test
-    public void navigatepermitspage ()
-{
+    public void navigatepermitspage () throws InterruptedException{
+        logger = extent.createTest("navigate done ");
     homepage =new HomePage(driver);
 
 }

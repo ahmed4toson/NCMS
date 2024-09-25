@@ -1,8 +1,10 @@
 package pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -11,7 +13,6 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 public class Base {
     protected static WebDriver driver;
-    SoftAssert soft = new SoftAssert();
     private final long timeoutInSeconds = 20;
     WebDriverWait webDriverWait;
     public Base(WebDriver driver) {
@@ -28,6 +29,13 @@ public class Base {
     protected void click_JS(WebElement webElement) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", webElement);
     }
+    public void hover(By locator)
+    {
+        WebElement element = driver.findElement(locator);      //  handhover
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.build().perform();
+    }
     protected WebElement waitUntilElementToBevisible(WebElement webElement) {
         webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
         return webElement;
@@ -41,6 +49,31 @@ public class Base {
     protected static WebElement waitUntilElementToBeClickable(By locator) {
         return new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(locator));
     }
+
+
+    // Helper method to select an option by visible text
+    private void selectByVisibleText(By locator, String text) {
+        new Select(driver.findElement(locator)).selectByVisibleText(text);
+    }
+
+    // Helper method to select an option by index
+    void selectByIndex(By locator, int index) {
+        new Select(driver.findElement(locator)).selectByIndex(index);
+    }
+
+    private void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+
+
+
+
+
+
+
+
     protected static void click(WebElement webElement) {
         for (int i = 0; i < 10; i++) {
             try {

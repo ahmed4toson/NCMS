@@ -13,16 +13,14 @@ public class HomePage extends Base{
 
 
     private final By Permits =new By.ByCssSelector("a.menu-link.menu-toggle");
+    private final By visitPermit =new By.ByCssSelector("a[href=\"https://vms-stg.wakeb.tech/ar/dashboard/visits\"]");
 
 
-public void handhover ()
+
+public void goToVisitPermit()
 {
-    WebElement element = driver.findElement(Permits);      //  handhover
-    Actions actions = new Actions(driver);
-    actions.moveToElement(element);
-
-
-
+    hover(Permits);
+    click(visitPermit);
 
 }
 

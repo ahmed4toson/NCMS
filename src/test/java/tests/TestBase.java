@@ -40,7 +40,7 @@ public class TestBase {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+                         // logger   Toson
         if (status.equalsIgnoreCase("pass")) {
             logger.pass(stepDetail, MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
         } else if (status.equalsIgnoreCase("fail")) {
