@@ -57,7 +57,7 @@ public class Base {
     }
 
     // Helper method to select an option by index
-    void selectByIndex(By locator, int index) {
+    void selectByIndex (By locator, int index) {
         new Select(driver.findElement(locator)).selectByIndex(index);
     }
 
@@ -97,7 +97,7 @@ public class Base {
                 break;
             } catch (ElementClickInterceptedException e) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(10000);
                 } catch (InterruptedException ex) {
                     throw new RuntimeException(ex);
                 }

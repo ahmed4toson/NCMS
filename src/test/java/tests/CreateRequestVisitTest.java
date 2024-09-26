@@ -7,7 +7,6 @@ public class CreateRequestVisitTest extends TestBase {
 
      NewPermitForm form ;
     LoginPage loginpage;
-
     HomePage homePage;
      @Test
     public void form() throws InterruptedException {
@@ -21,8 +20,13 @@ public class CreateRequestVisitTest extends TestBase {
 
          form = new NewPermitForm(driver);
          form.ChooseLocation();
+         form.InfoOfVisit("welcome at wakeb");
 
+         form.Working_hours("9262024","9302024","0700a","0500p");
+         form.MoreInfo("welcome at wakeb ai");
+//          form.selectRadioButtonIfNotSelected();
 
+//          reporter("info", "the button is already selected ");
 
      }
 
