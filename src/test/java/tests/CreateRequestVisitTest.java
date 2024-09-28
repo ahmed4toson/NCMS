@@ -22,8 +22,24 @@ public class CreateRequestVisitTest extends TestBase {
          form.ChooseLocation();
          form.InfoOfVisit("welcome at wakeb");
 
-         form.Working_hours("9262024","9302024","0700a","0500p");
+         form.Working_hours("9282024","9302024" ,"0700a","0500p");
          form.MoreInfo("welcome at wakeb ai");
+
+         form.Selectvisitor();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //          form.selectRadioButtonIfNotSelected();
 
 //          reporter("info", "the button is already selected ");

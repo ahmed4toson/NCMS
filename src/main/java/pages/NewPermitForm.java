@@ -25,13 +25,18 @@ public class NewPermitForm extends Base {
     private final By VisitDays = By.cssSelector("select[name=\"repeat\"]"); // ايام الزيارة
     private final By FromDate =  By.id("from_date");    //تاريخ البداء
     private final By FromTime =By.cssSelector("input[id=\"from_fromtime\"]");   //وقت البدء
-    private final By ToDate = By.id("from_date");     // تاريخ الانتهاء *
+    private final By ToDate = By.id("to_date");     // تاريخ الانتهاء *
     private final By ToTime = By.id("to_totime");   // وقت الانتهاء
     private final By Comment = By.name("comment"); // كومنت
 //    private final By radio_button =By.id("choosefromemployee");             //radio button
     private final By radio_button =By.cssSelector("#visitForm > div.card-body > div > div > div:nth-child(3) > div:nth-child(3) > div > label > b");           //radio button
     private final By ButtonAddVisitor = By.id("AddVisitor");  // زر اضافة زائر
 
+
+          //  complete page of visit
+
+    private final By searchBar =By.cssSelector("span[class=\"select2-selection select2-selection--multiple\"]");
+    private final By user = By.xpath("//*[@id=\"select2-selectUsers-result-zpa2-2\"]");
    private final By ButtonSaveRequest = By.id("submitVisitForm");
 
 
@@ -61,10 +66,16 @@ public class NewPermitForm extends Base {
     public void MoreInfo(String comment)
     {
     setTextElement(driver.findElement(Comment),comment );
-
     click(radio_button);
+    click (ButtonAddVisitor);
     }
 
+
+    public void Selectvisitor()
+    {
+     click(searchBar);
+    // click(user);
+     }
 
 //    public void selectRadioButtonIfNotSelected() {
 //        try {
