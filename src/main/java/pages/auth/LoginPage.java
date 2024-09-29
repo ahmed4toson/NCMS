@@ -1,9 +1,10 @@
-package pages;
+package pages.auth;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.Base;
 
-public class LoginPage extends Base{
+public class LoginPage extends Base {
 
    // WebDriver driver;
     public LoginPage(WebDriver driver) {

@@ -28,7 +28,7 @@ public class TestBase {
     protected static ExtentSparkReporter reporter;
     protected static ExtentTest logger;
 
-    static WebDriver driver;
+    public static WebDriver driver;
 
     public static void reporter(String status, String stepDetail) throws InterruptedException {
 
@@ -51,6 +51,7 @@ public class TestBase {
             logger.warning(stepDetail);
         }
     }
+
     @BeforeSuite
     public void setUpSuite() throws IOException {
         extent = new ExtentReports();

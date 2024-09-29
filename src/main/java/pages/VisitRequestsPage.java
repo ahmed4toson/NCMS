@@ -8,10 +8,8 @@ public class VisitRequestsPage extends Base{
     public VisitRequestsPage(WebDriver driver){
 
         super(driver);
+
     }
-
-
-
 
     public void ClickOnNewRequest() {
 

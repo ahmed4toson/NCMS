@@ -1,10 +1,11 @@
-package tests;
+package tests.auth;
 
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.LoginPage;
+import pages.auth.LoginPage;
+import tests.TestBase;
 
-public class LoginTest extends TestBase{
+public class LoginTest extends TestBase {
 
     private LoginPage loginpage;
     private HomePage homepage ;
@@ -15,7 +16,7 @@ public class LoginTest extends TestBase{
     logger = extent.createTest("Log in with valid data");
 
     loginpage =new LoginPage(driver);
-    loginpage.FormLogin("default@wakeb.com","P@ssw0rd");
+    loginpage.FormLogin("default@user.com","P@ssw0rd");
         reporter("info","userName is default@wakeb.com");
         reporter("warning","user should enter a valid password");
 
